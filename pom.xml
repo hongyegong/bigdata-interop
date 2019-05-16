@@ -93,6 +93,9 @@
     <google.guava.version>27.0.1-jre</google.guava.version>
     <google.truth.version>0.42</google.truth.version>
     <hadoop.one.version>1.2.1</hadoop.one.version>
+    <google.api.grpc.version>0.12.0</google.api.grpc.version>
+    <google.protobuf.version>3.9.1</google.protobuf.version>
+    <grpc.version>1.21.0</grpc.version>
     <hadoop.two.version>2.9.2</hadoop.two.version>
     <hadoop.three.version>3.2.0</hadoop.three.version>
     <junit.version>4.13-beta-1</junit.version>
@@ -332,6 +335,31 @@
         <groupId>com.google.auto.value</groupId>
         <artifactId>auto-value-annotations</artifactId>
         <version>${google.auto-value.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.grpc</groupId>
+        <artifactId>grpc-netty</artifactId>
+        <version>${grpc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.grpc</groupId>
+        <artifactId>grpc-protobuf</artifactId>
+        <version>${grpc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.grpc</groupId>
+        <artifactId>grpc-stub</artifactId>
+        <version>${grpc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-iam-v1</artifactId>
+        <version>${google.api.grpc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.protobuf</groupId>
+        <artifactId>protobuf-java</artifactId>
+        <version>${google.protobuf.version}</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
