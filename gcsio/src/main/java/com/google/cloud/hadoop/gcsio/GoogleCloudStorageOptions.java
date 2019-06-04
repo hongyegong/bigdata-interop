@@ -84,6 +84,9 @@ public abstract class GoogleCloudStorageOptions {
   public static final RequesterPaysOptions REQUESTER_PAYS_OPTIONS_DEFAULT =
       RequesterPaysOptions.DEFAULT;
 
+  /** Default setting for enabling grpc reads/writes. */
+  public static final boolean ENABLE_GRPC_DEFAULT = false;
+
   public static Builder newBuilder() {
     return new AutoValue_GoogleCloudStorageOptions.Builder()
         .setAutoRepairImplicitDirectoriesEnabled(AUTO_REPAIR_IMPLICIT_DIRECTORIES_DEFAULT)
@@ -103,7 +106,8 @@ public abstract class GoogleCloudStorageOptions {
         .setCopyBatchThreads(COPY_BATCH_THREADS_DEFAULT)
         .setReadChannelOptions(READ_CHANNEL_OPTIONS_DEFAULT)
         .setWriteChannelOptions(ASYNC_WRITE_CHANNEL_OPTIONS_DEFAULT)
-        .setRequesterPaysOptions(REQUESTER_PAYS_OPTIONS_DEFAULT);
+        .setRequesterPaysOptions(REQUESTER_PAYS_OPTIONS_DEFAULT)
+        .setGrpcEnabled(ENABLE_GRPC_DEFAULT);
   }
 
   @Nullable
@@ -156,6 +160,8 @@ public abstract class GoogleCloudStorageOptions {
   public abstract AsyncWriteChannelOptions getWriteChannelOptions();
 
   public abstract RequesterPaysOptions getRequesterPaysOptions();
+
+  public abstract boolean isGrpcEnabled();
 
   public abstract Builder toBuilder();
 
@@ -237,6 +243,8 @@ public abstract class GoogleCloudStorageOptions {
     }
 
     public abstract Builder setRequesterPaysOptions(RequesterPaysOptions requesterPaysOptions);
+
+    public abstract Builder setGrpcEnabled(boolean grpcEnabled);
 
     abstract GoogleCloudStorageOptions autoBuild();
 

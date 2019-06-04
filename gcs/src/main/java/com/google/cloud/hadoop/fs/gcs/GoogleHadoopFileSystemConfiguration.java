@@ -523,6 +523,10 @@ public class GoogleHadoopFileSystemConfiguration {
               "fs.gs.inputstream.min.range.request.size",
               GoogleCloudStorageReadOptions.DEFAULT_MIN_RANGE_REQUEST_SIZE);
 
+  /** Configuration key for enabling use of the gRPC API for read/write. */
+  public static final GoogleHadoopFileSystemConfigurationProperty<Boolean> GCS_GRPC_ENABLE =
+      new GoogleHadoopFileSystemConfigurationProperty<>("fs.gs.grpc.enable", false);
+
   /** Override configuration file path. This file must be a valid Hadoop configuration file. */
   public static final GoogleHadoopFileSystemConfigurationProperty<String> GCS_CONFIG_OVERRIDE_FILE =
       new GoogleHadoopFileSystemConfigurationProperty<>("fs.gs.config.override.file", null);
@@ -570,7 +574,8 @@ public class GoogleHadoopFileSystemConfiguration {
             GCS_MAX_WAIT_MILLIS_EMPTY_OBJECT_CREATE.get(config, config::getInt))
         .setReadChannelOptions(getReadChannelOptions(config))
         .setWriteChannelOptions(getWriteChannelOptions(config))
-        .setRequesterPaysOptions(getRequesterPaysOptions(config, projectId));
+        .setRequesterPaysOptions(getRequesterPaysOptions(config, projectId))
+        .setGrpcEnabled(GCS_GRPC_ENABLE.get(config, config::getBoolean));
 
     return gcsFsOptionsBuilder;
   }
