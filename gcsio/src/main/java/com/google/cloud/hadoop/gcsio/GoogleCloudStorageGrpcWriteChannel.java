@@ -102,7 +102,7 @@ public final class GoogleCloudStorageGrpcWriteChannel
     // TODO(julianandrews): Populate this properly.
     completedItemInfo =
         new GoogleCloudStorageItemInfo(
-            new StorageResourceId(object.getBucket(), object.getName()), 0, 0, 0, "", "");
+            new StorageResourceId(object.getBucket(), object.getName()), 0, 0, "", "");
   }
 
   @Override

@@ -120,7 +120,7 @@ public class BigQueryRecordWriter<K, V extends JsonObject> extends RecordWriter<
         Job job,
         String projectId,
         AsyncWriteChannelOptions options) {
-      super(threadPool, options);
+      super(BigQueryRecordWriter.this.threadPool, options);
       this.bigQueryHelper = bigQueryHelper;
       this.job = job;
       this.projectId = projectId;
