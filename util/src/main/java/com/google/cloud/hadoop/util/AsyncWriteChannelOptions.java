@@ -48,6 +48,8 @@ public abstract class AsyncWriteChannelOptions {
     return builder();
   }
 
+  public abstract Builder toBuilder();
+
   public static Builder builder() {
     return new AutoValue_AsyncWriteChannelOptions.Builder()
         .setFileSizeLimitedTo250Gb(LIMIT_FILESIZE_TO_250GB_DEFAULT)
