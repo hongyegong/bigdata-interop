@@ -96,8 +96,8 @@
     <google.guava.version>27.0.1-jre</google.guava.version>
     <google.truth.version>0.42</google.truth.version>
     <hadoop.one.version>1.2.1</hadoop.one.version>
-    <google.protobuf.version>3.9.1</google.protobuf.version>
-    <grpc.version>1.24.2</grpc.version>
+    <google.protobuf.version>3.11.0</google.protobuf.version>
+    <grpc.version>1.26.0</grpc.version>
     <hadoop.two.version>2.9.2</hadoop.two.version>
     <hadoop.three.version>3.2.0</hadoop.three.version>
     <junit.version>4.13-beta-1</junit.version>
