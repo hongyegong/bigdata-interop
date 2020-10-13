@@ -49,7 +49,7 @@ public class GoogleCloudStorageGrpcReadChannel implements SeekableByteChannel {
   private static final GoogleLogger logger = GoogleLogger.forEnclosingClass();
 
   private static final Duration READ_STREAM_TIMEOUT = Duration.ofMinutes(20);
-  private static final Duration READ_OBJECT_METADATA_TIMEOUT = Duration.ofMinutes(1);
+  private static final Duration READ_OBJECT_METADATA_TIMEOUT = Duration.ofMinutes(5);
   private static final int READ_RETRIES = 5;
 
   // Context of the request that returned resIterator.
